@@ -1,0 +1,29 @@
+COFFEE-TERIA - ACTUALIZACION DE BACKEND Y BASE DE DATOS
+
+Archivos incluidos:
+- server.js: conserva las rutas existentes y agrega endpoints para compras con actualización de stock, movimientos, recetas, nómina, reportes y autenticación.
+- package.json: agrega bcryptjs para almacenar contraseñas con hash.
+- sql_actualizacion_coffee_teria.sql: crea TblUsuario y TblNomina e índices de consulta.
+- .env.example: plantilla de configuración. No contiene tu contraseña real.
+
+IMPORTANTE:
+1. Abre la carpeta cafeteria_build en VS Code (es la carpeta que contiene package.json).
+2. Haz una copia de seguridad de tu proyecto y de la base de datos antes de reemplazar archivos o ejecutar SQL.
+3. Copia server.js y package.json de este paquete sobre los del proyecto.
+4. En MySQL Workbench selecciona la base cefeteriap y ejecuta sql_actualizacion_coffee_teria.sql si TblUsuario, TblNomina o TblSesion aún no existen.
+5. Conserva tu .env local y verifica DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME=cefeteriap y API_PORT. No compartas ese archivo.
+6. En PowerShell, dentro de cafeteria_build: npm install ; npm run dev.
+
+Endpoints agregados:
+GET/POST /api/gestion/compras
+GET/POST /api/gestion/movimientos-stock
+GET /api/gestion/recetas
+PUT /api/gestion/recetas/:idProducto
+GET/POST /api/gestion/nomina
+GET /api/gestion/reportes/resumen?desde=AAAA-MM-DD&hasta=AAAA-MM-DD
+POST /api/gestion/usuarios
+POST /api/auth/login
+
+INTEGRACION VISUAL:
+Inventario, compras (con filtro por día), recetas, perfiles, nómina, reportes y pagos simulados están conectados a los endpoints de MySQL desde src/App.tsx.
+El enlace público se comparte con la opción "Copiar enlace público". Los pagos son de demostración y no procesan cargos ni transferencias.

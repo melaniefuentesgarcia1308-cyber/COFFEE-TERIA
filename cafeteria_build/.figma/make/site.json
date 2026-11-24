@@ -1,0 +1,10 @@
+{
+  "description": "This web app streamlines operations for local cafes, offering features for menu management, order tracking, reservations, and inventory control to enhance customer experience and efficiency.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
