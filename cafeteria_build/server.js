@@ -1826,5 +1826,8 @@ app.post('/api/gestion/login', async (req, res) => {
   }
 });
 
-const port = Number(process.env.API_PORT || 3001);
-app.listen(port, () => console.log(`API de COFFEE-TERIA activa en http://localhost:${port}`));
+const port = Number(process.env.PORT || process.env.API_PORT || 3001);
+
+app.listen(port, '0.0.0.0', () => {
+    console.log(`API de COFFEE-TERIA activa en el puerto ${port}`);
+});
